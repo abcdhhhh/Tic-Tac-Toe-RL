@@ -18,7 +18,7 @@ def checkState(state):
                 return index
         if np.array_equal(state[0::n + 1], line) or np.array_equal(state[n - 1:n * n - 1:n - 1], line):
             return index
-    if np.where(state == 0)[0].size:
+    if len(np.where(state == 0)[0]):
         return 0  # 没下完
     else:
         return -1  # 平局
